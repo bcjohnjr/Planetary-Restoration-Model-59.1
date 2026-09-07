@@ -2,6 +2,8 @@
 
 ## Main text
 
+Given the canonical annual net-CO₂ trajectory in this repository, what atmospheric CO₂ trajectory is produced by calibrated state-dependent carbon-cycle models, and what additional removal trajectory is required to reach a specified atmospheric target such as 280 ppm?
+
 1. The canonical financed negative-emissions trajectory.
 2. Archived calibrated FaIR and independent Hector non-return.
 3. Cumulative atmospheric drawdown versus cumulative net removal.
