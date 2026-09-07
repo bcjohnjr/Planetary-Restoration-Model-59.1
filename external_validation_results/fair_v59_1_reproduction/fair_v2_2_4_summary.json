@@ -1,0 +1,13 @@
+{
+  "model": "FaIR",
+  "version": "2.2.4",
+  "calibration": "fair-calibrate 1.4.1",
+  "configs": 841,
+  "returning_configs": 0,
+  "nonreturn_fraction": 1.0,
+  "crossing_p05": null,
+  "crossing_p50": null,
+  "crossing_p95": null,
+  "background_nonco2_scenario": "FaIR calibrated-constrained example: medium-extension",
+  "co2_override": "V53.1 net CO2 mapped to CO2 FFI; CO2 AFOLU zero from 2026"
+}
