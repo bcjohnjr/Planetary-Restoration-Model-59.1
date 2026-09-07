@@ -34,7 +34,7 @@ jobs:
           import csv
           from pathlib import Path
 
-          src = Path("data/external_validation_net_co2_trajectory.csv")
+          src = Path("external_validation_net_co2_trajectory.csv")
           dst = Path(
               "external_validation_workflow/validation_input/"
               "external_validation_net_co2_trajectory_extended_to_2400.csv"
