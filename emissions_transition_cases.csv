@@ -1,0 +1,6 @@
+case_key,case,residual_floor_year,gross_emissions_2030_gtco2,energy_related_co2_2035_gtco2,cumulative_transition_capital_to_2050_usd_tn
+iea_nze_reference,IEA-2025-NZE-calibrated transition reference,2051,35.419171111179274,18.0,100.99999999999999
+high_acceleration,Accelerated capital-turnover design,2047,33.83681657290036,15.01356770362905,116.14999999999999
+current_investment_constrained,Current-investment constrained,2056,38.65603053719556,25.849668383939395,68.67999999999999
+natural_turnover,Natural turnover only,2184,40.89466395129737,33.991856515378494,45.449999999999996
+delayed_finance,Delayed-finance stress,2057,44.5204984068077,37.265159852758785,60.349999999999994

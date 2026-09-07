@@ -1,0 +1,4 @@
+case,post_2400_temperature_boundary,peak_gmsl_year,peak_additional_since_2026_m,first_nonpositive_gmsl_rate_year,first_10cm_below_peak_year,first_return_to_2026_gmsl_year,first_within_5cm_of_preindustrial_climate_component_state_year
+low,exponential decline toward 0 C; 300-year e-folding; scenario only,2316,0.3409107393721419,2309,2650,3309,5459
+central,exponential decline toward 0 C; 300-year e-folding; scenario only,2432,0.7096896402845957,2433,2639,4011,6536
+high,exponential decline toward 0 C; 300-year e-folding; scenario only,2476,1.506433725056067,2477,2615,4987,7780

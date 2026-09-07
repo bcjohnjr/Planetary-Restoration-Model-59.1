@@ -1,0 +1,8 @@
+pathway,cdr_gtco2_yr,electricity_mwh_t,electricity_twh_yr,electricity_low_twh_yr,electricity_high_twh_yr,heat_mwhth_t,heat_twhth_yr,electricity_low_mwh_t,electricity_high_mwh_t,resource_utilization_fraction,resource_scarcity_binding,land_constraint_scale,ew_spreading_area_mha,ew_adoptable_cropland_mha,credited_new_boreal_afforestation_fraction
+DACCS,4.75,0.8,3800.0000000000005,1662.4999999999998,6175.0,1.5,7125.0,0.35,1.3,0.0,False,,,,
+Enhanced silicate weathering,1.9,0.4,760.0,380.0,1520.0,0.0,0.0,0.2,0.8,0.9237947172098104,False,1.0,633.3333333333333,685.5779985906672,
+Ocean alkalinity / carbonate weathering,0.95,0.5,475.0,95.0,1900.0,0.0,0.0,0.1,2.0,0.0,False,,,,
+Biochar,1.425,0.05,71.25000000000001,28.5,170.99999999999997,0.0,0.0,0.02,0.12,0.053092399403874835,False,1.0,,,
+BiCRS / BECCS / durable biomass storage,2.85,0.1,285.00000000000006,-570.0000000000001,855.0,0.0,0.0,-0.2,0.3,0.1415797317436662,False,1.0,,,
+Biological restoration,1.425,0.01,14.25,7.125,42.74999999999999,0.0,0.0,0.005,0.03,0.3883470068197972,False,1.0,,,0.0
+Direct/passive mineral carbonation,1.9,0.5,950.0,285.0,1900.0,0.0,0.0,0.15,1.0,0.0,False,,,,

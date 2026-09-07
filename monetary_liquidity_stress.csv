@@ -1,0 +1,7 @@
+case,stress_window_days,timber_index_change_fraction,reference_usd_per_unit,total_reserve_ratio,liquid_reserve_share,liquid_asset_haircut_fraction,timber_orderly_liquidation_fraction,fire_sale_discount_fraction,emergency_liquidity_ratio,redemption_fraction_supply,redemption_claim_usd_per_100_units,paid_from_liquid_usd,emergency_credit_draw_usd,orderly_timber_cash_usd,fire_sale_timber_cash_usd,redemption_coverage_fraction,effective_redemption_price_usd_per_unit,effective_price_fraction_of_reference,post_redemption_net_reserve_ratio,liquidity_test_pass
+Base,5,0.0,1.0,1.1,0.7,0.0,0.05,0.1,0.0,0.1,10.0,10.0,0.0,0.0,0.0,1.0,1.0,1.0,1.1111111111111112,True
+"Timber +30%, moderate redemption",5,0.3,1.3,1.1,0.65,0.03,0.05,0.2,0.05,0.25,32.5,32.5,0.0,0.0,0.0,1.0,1.3,1.0,1.1047333333333333,True
+"Timber -30%, moderate redemption",5,-0.3,0.7,1.1,0.65,0.05,0.05,0.2,0.05,0.25,17.5,17.5,0.0,0.0,0.0,1.0,0.7,1.0,1.0856666666666666,True
+Liquidity shock,5,0.0,1.0,1.0,0.45,0.1,0.03,0.4,0.1,0.4,40.0,40.0,0.0,0.0,0.0,1.0,1.0,1.0,0.925,False
+Severe combined,5,0.3,1.3,0.75,0.2,0.15,0.01,0.6,0.05,0.65,84.5,16.575,6.5,0.78,30.888,0.6478461538461538,0.8422000000000001,0.6478461538461538,0.0,False
+Thirty-day run,30,-0.2,0.8,1.0,0.45,0.08,0.15,0.35,0.1,0.6,48.0,33.120000000000005,8.0,6.6,0.2799999999999958,1.0,0.8,1.0,0.9052884615384618,False

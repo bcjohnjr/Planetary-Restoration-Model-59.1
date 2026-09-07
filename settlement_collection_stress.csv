@@ -1,0 +1,5 @@
+case,required_fee_fraction,best_fee_fraction,retained_share,collection_usd_tn,shortfall_usd_tn,funding_fraction,pass,max_fee_fraction,turnover_multiple_of_gdp,exempt_transaction_share,fee_semi_elasticity,name,baseline_retained_share
+Central collection,0.0022973955398865524,0.0022973955398865524,0.8595825397742983,3.661281226499549,0.0,1.0,True,0.03,8.0,0.25,20.0,Central collection,0.9
+Lower turnover / higher leakage,0.01712290770343099,0.01712290770343099,0.3844364768035531,3.6612812264995496,0.0,1.0,True,0.03,3.0,0.4,35.0,Lower turnover / higher leakage,0.7
+High turnover / low leakage,0.001319953874642234,0.001319953874642234,0.9350710709385046,3.6612812264995496,0.0,1.0,True,0.03,12.0,0.2,12.0,High turnover / low leakage,0.95
+Severe migration stress,,0.016665,0.18395811547750898,0.7104671672097752,2.950814059289774,0.1940487832695205,False,0.03,1.5,0.5,60.0,Severe migration stress,0.5

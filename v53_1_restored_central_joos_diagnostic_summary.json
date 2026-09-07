@@ -1,0 +1,62 @@
+{
+  "model_class": "Joos four-reservoir diagnostic + durable storage/reversal + lagged permafrost + target-band controller",
+  "publication_boundary": "Joos IRF is a diagnostic only under sustained large negative emissions. Official calibrated/constrained FaIR/OSCAR validation is a release gate.",
+  "scenario": {
+    "name": "Accelerated Planetary Restoration Design",
+    "emissions_anchor_gtco2": 42.2,
+    "residual_emissions_gtco2": 1.5,
+    "residual_year": 2050,
+    "cdr_mode": "accelerated",
+    "mature_incremental_cdr_gtco2": 15.2,
+    "cdr_maturity_year": 2043,
+    "desalination_dispatch_fraction": 0.0,
+    "observed_natural_sink_gtc_yr": 6.3,
+    "end_year": 2400,
+    "emissions_mode": "endogenous",
+    "transition_case_key": "iea_nze_reference"
+  },
+  "land_case": "central",
+  "initialization": {
+    "effective_age_years": 9.570071038307578,
+    "state_gtc": [
+      101.78527016162289,
+      102.40829122753159,
+      101.79941037250693,
+      14.006818238338676
+    ],
+    "total_excess_gtc": 319.9997900000001,
+    "implied_sink_gtc_yr": 6.299999999999999
+  },
+  "peak_co2_ppm": 439.5487249553553,
+  "peak_year": 2032,
+  "crossing_year": 2155,
+  "target_band_entry_year": 2154,
+  "cumulative_incremental_cdr_to_target_gtco2": 1835.435551448252,
+  "cumulative_reversal_to_target_gtco2": 59.21067926237475,
+  "cumulative_permafrost_to_target_gtco2": 22.223165016982986,
+  "stock_at_end_gtco2": 1930.4768955132354,
+  "pathway_stock_at_end_gtco2": {
+    "DACCS": 628.8237486732112,
+    "Enhanced silicate weathering": 250.70917992451282,
+    "Ocean alkalinity / carbonate weathering": 125.35458996225641,
+    "Biochar": 173.45653630675463,
+    "BiCRS / BECCS / durable biomass storage": 374.5325591282159,
+    "Biological restoration": 125.88575847203967,
+    "Direct/passive mineral carbonation": 251.71452304624478
+  },
+  "maintenance_shortfall_years": [],
+  "target_held": true,
+  "controller_ramp_override_years": [
+    2154,
+    2156,
+    2157
+  ],
+  "controller_assumptions": {
+    "target_ppm": 280.0,
+    "band_half_width_ppm": 0.5,
+    "cdr_ramp_limit_gtco2_yr2": 0.5
+  },
+  "first_negative_fast_reservoir_year": 2043,
+  "first_natural_flux_outgassing_year": 2067,
+  "minimum_fast_reservoir_gtc": -4.242185937376554
+}

@@ -1,0 +1,18 @@
+{
+  "release_gate": "BLOCKING",
+  "fair": {
+    "status": "NOT_EXECUTED_DEPENDENCY_UNAVAILABLE_IN_BUILD_ENVIRONMENT",
+    "required_version": "FaIR 2.2.4 official package",
+    "calibration": "fair-calibrate 1.4.1 calibrated/constrained 841-member ensemble",
+    "package_url": "https://pypi.org/project/fair/2.2.4/",
+    "documentation_url": "https://docs.fairmodel.net/en/latest/examples/calibrated_constrained_ensemble.html",
+    "calibration_data_url": "https://github.com/OMS-NetZero/FAIR/tree/master/examples/data/calibrated_constrained_ensemble"
+  },
+  "oscar": {
+    "status": "NOT_EXECUTED_DEPENDENCY_UNAVAILABLE_IN_BUILD_ENVIRONMENT",
+    "required_model": "Official IIASA OSCAR; v4 is beta as of the V53 build date, so archive the exact commit/data library used.",
+    "repository_url": "https://github.com/iiasa/OSCAR"
+  },
+  "trajectory_contract": "data/external_validation_net_co2_trajectory.csv contains the actual V53.1 advanced annual net CO2 pathway (gross CO2 + permafrost CO2 + storage reversals - CDR). External model runs must ingest this pathway or an exactly documented equivalent and archive parameter/config identifiers.",
+  "publication_rule": "No precise restoration year may be presented as validated until official calibrated/constrained FaIR and an archived OSCAR configuration have been run on the V53.1 trajectory and their spread reported."
+}

@@ -1,0 +1,5 @@
+case,crossing_year,peak_co2_ppm,peak_year,binding_year_count,first_binding_year,maturity_funding_scale,maturity_funded_cdr_gtco2_yr,maturity_available_funding_usd_tn
+Central collection,2149,439.469135638733,2032,0,,1.0,15.2,6.6126
+Lower turnover / higher leakage,2149,439.469135638733,2032,0,,1.0,15.2,4.092290903591124
+High turnover / low leakage,2149,439.469135638733,2032,0,,1.0,15.2,6.6126
+Severe migration stress,,441.3287496038988,2034,373,2028,0.20107506415348117,3.0563409751329136,0.710467170762348

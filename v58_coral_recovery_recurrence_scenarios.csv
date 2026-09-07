@@ -1,0 +1,7 @@
+severe_bleaching_recurrence_interval_years,typical_10y_cover_recovery_window_available,conservative_15y_cover_recovery_window_available,20y_ecological_recovery_screen_available,interpretation
+2,False,False,False,Repeated severe heat likely interrupts full coral-cover re-establishment
+5,False,False,False,Repeated severe heat likely interrupts full coral-cover re-establishment
+10,True,False,False,"A lower-bound cover-recovery window may exist, but ecological/community recovery can still be interrupted"
+15,True,True,False,"A lower-bound cover-recovery window may exist, but ecological/community recovery can still be interrupted"
+20,True,True,True,Both coral-cover and central ecological-recovery windows are physically available if local stressors are also controlled
+30,True,True,True,Both coral-cover and central ecological-recovery windows are physically available if local stressors are also controlled

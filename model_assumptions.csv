@@ -1,0 +1,17 @@
+module,parameter,central_value,unit,status,source_or_note
+Carbon,Starting atmospheric CO2,428.73,ppm,EVIDENCE,NOAA May 2026 global monthly mean
+Carbon,Preindustrial CO2,278,ppm,EVIDENCE/CONVENTION,Global Carbon Budget / FaIR convention
+Carbon,2025 anthropogenic CO2 emissions anchor,42.2,GtCO2/yr,EVIDENCE,Global Carbon Budget 2025 preliminary estimate
+Carbon,Observed natural land+ocean sink,6.3,GtC/yr,EVIDENCE,Global Carbon Budget 2025 preliminary land+ocean sink
+CDR,Mature incremental CDR design,15.2,GtCO2/yr,SCENARIO,Accelerated restoration design
+CDR,Maturity year,2043,year,SCENARIO,Accelerated deployment assumption
+Emissions,Residual emissions,1.5,GtCO2/yr,SCENARIO,Deep-decarbonization residual
+Emissions,Residual year,2050,year,SCENARIO,Deep-decarbonization trajectory
+Finance,Mature GDP screen,309,USD tn/yr,SCENARIO,Macroeconomic screen
+Finance,Settlement envelope cap,2.14,% GDP,POLICY CONSTRAINT,Maximum aggregate public settlement envelope
+Land,Global agricultural land,4800,Mha,EVIDENCE,FAOSTAT 2023 order-of-magnitude anchor
+Water,CDR managed blue-water stress anchor,183,km3/yr,LITERATURE-INFORMED STRESS,IPCC-reviewed BECCS water-impact scale
+Energy,Pre-CDR transformed electricity,86181.327,TWh/yr,EXTERNAL SCREEN,Must be decomposed/validated by sector before publication-grade energy claims
+Grid,Adequacy failure threshold,0.01,% annual unserved energy,MODEL CRITERION,Synthetic stress criterion not a regulatory standard
+Monetary,Timber reserve liquidation limits,varies,scenario,STRESS ASSUMPTION,Author-defined liquidity stress cases
+Settlement,Turnover/leakage elasticities,varies,scenario,STRESS ASSUMPTION,Requires empirical payment-network calibration

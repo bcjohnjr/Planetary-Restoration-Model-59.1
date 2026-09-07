@@ -1,0 +1,10 @@
+scenario,land_case,emissions_case,emissions_residual_floor_year,planned_cdr_gtco2_yr,feasible_cdr_gtco2_yr,peak_co2_ppm,peak_year,return_280_year,cumulative_cdr_to_target_gtco2,peak_warming_c,years_above_1p5c,land_binding_year_count,cdr_electricity_twh_yr,total_electricity_core_twh_yr
+IEA-NZE-calibrated restoration reference,central,IEA-2025-NZE-calibrated transition reference,2051,15.2,15.2,439.469135638733,2032,2149,1748.0000000000034,1.6463474701405212,29,0,6355.5,92736.07500000001
+Accelerated capital-turnover design,central,Accelerated capital-turnover design,2047,15.2,15.2,438.50915746164384,2032,2146,1702.4000000000033,1.6297338383406585,27,0,6355.5,92736.07500000001
+State of CDR 2026 highest-ambition median benchmark,central,IEA-2025-NZE-calibrated transition reference,2051,13.100000000000001,13.100000000000003,441.81590500279367,2034,2191,1760.7999999999959,1.6989032224365233,40,0,5477.437500000001,91858.01250000001
+Low-efficiency land stress,low_efficiency,IEA-2025-NZE-calibrated transition reference,2051,15.2,11.89386378708694,440.0620047285222,2033,2225,1885.2841279880786,1.6593151138274704,31,199,6125.893277628205,92506.46827762821
+CDR under-delivery 10 Gt/yr,central,IEA-2025-NZE-calibrated transition reference,2051,10.0,10.0,440.92748996169837,2033,2224,1865.0,1.682619816352892,36,0,4181.25,90561.82500000001
+Current-investment constrained transition,central,Current-investment constrained,2056,15.2,15.2,442.68565303735284,2035,2154,1824.0000000000036,1.6885246657022308,32,0,6355.5,92736.07500000001
+Natural capital-turnover transition,central,Natural turnover only,,15.2,15.2,449.05337723362834,2041,2235,3055.199999999992,1.8083871102464377,72,0,6355.5,92736.07500000001
+Delayed transition finance,central,Delayed-finance stress,2057,15.2,15.2,451.1142585722896,2037,2162,1945.600000000004,1.7537127968818862,37,0,6355.5,92736.07500000001
+Legacy prescribed-linear comparator,central,Legacy prescribed linear decline,2050,15.2,15.2,440.38384596661604,2034,2157,1869.6000000000038,1.7008364555609048,34,0,6355.5,92736.07500000001

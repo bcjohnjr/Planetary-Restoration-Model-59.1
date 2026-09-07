@@ -1,0 +1,2 @@
+# Install in a network-enabled clean environment for the official external benchmark
+fair==2.2.4

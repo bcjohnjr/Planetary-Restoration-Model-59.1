@@ -1,0 +1,4 @@
+region,hard_coral_cover_2024_pct,hard_coral_cover_2025_pct,hard_coral_cover_2026_pct,2026_gap_to_2024_percentage_points,2026_relative_gap_to_2024_fraction,observed_2025_to_2026_change_percentage_points,one_year_linear_cover_return_screen_year,linear_screen_status
+Northern,39.8,30.0,35.1,4.699999999999996,0.11809045226130643,5.100000000000001,2026.921568627451,ONE_YEAR_TREND_EXTRAPOLATION_NOT_FORECAST
+Central,33.2,28.6,31.6,1.6000000000000014,0.04819277108433739,3.0,2026.5333333333333,ONE_YEAR_TREND_EXTRAPOLATION_NOT_FORECAST
+Southern,38.9,26.9,26.4,12.5,0.3213367609254499,-0.5,,ONE_YEAR_TREND_EXTRAPOLATION_NOT_FORECAST

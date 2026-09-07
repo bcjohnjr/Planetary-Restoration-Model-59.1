@@ -1,0 +1,61 @@
+{
+  "classification": "Degraded settlement collection propagated through the full V53.1 advanced physical state. Monetary reserve/liquidity failures are reported separately and are not treated as the same mechanism.",
+  "rows": [
+    {
+      "case": "Central collection",
+      "first_below_280_year": 2155,
+      "return_status": "RETURNED_WITHIN_HORIZON",
+      "censored": false,
+      "censor_horizon_year": 2400,
+      "plot_year": 2155,
+      "peak_co2_ppm": 439.5487249553553,
+      "peak_warming_c": 1.7874497985673528,
+      "maturity_funding_scale": 1.0,
+      "maturity_funded_cdr_gtco2_yr": 15.2,
+      "funding_binding_year_count": 0,
+      "first_funding_binding_year": null
+    },
+    {
+      "case": "Lower turnover / higher leakage",
+      "first_below_280_year": 2155,
+      "return_status": "RETURNED_WITHIN_HORIZON",
+      "censored": false,
+      "censor_horizon_year": 2400,
+      "plot_year": 2155,
+      "peak_co2_ppm": 439.5487249553553,
+      "peak_warming_c": 1.7874497985673528,
+      "maturity_funding_scale": 1.0,
+      "maturity_funded_cdr_gtco2_yr": 15.2,
+      "funding_binding_year_count": 0,
+      "first_funding_binding_year": null
+    },
+    {
+      "case": "High turnover / low leakage",
+      "first_below_280_year": 2155,
+      "return_status": "RETURNED_WITHIN_HORIZON",
+      "censored": false,
+      "censor_horizon_year": 2400,
+      "plot_year": 2155,
+      "peak_co2_ppm": 439.5487249553553,
+      "peak_warming_c": 1.7874497985673528,
+      "maturity_funding_scale": 1.0,
+      "maturity_funded_cdr_gtco2_yr": 15.2,
+      "funding_binding_year_count": 0,
+      "first_funding_binding_year": null
+    },
+    {
+      "case": "Severe migration stress",
+      "first_below_280_year": null,
+      "return_status": "CENSORED_NOT_RETURNED_BY_HORIZON",
+      "censored": true,
+      "censor_horizon_year": 2400,
+      "plot_year": 2400,
+      "peak_co2_ppm": 441.461349025093,
+      "peak_warming_c": 1.8449666202327184,
+      "maturity_funding_scale": 0.20107506415348117,
+      "maturity_funded_cdr_gtco2_yr": 3.0563409751329136,
+      "funding_binding_year_count": 373,
+      "first_funding_binding_year": 2028
+    }
+  ]
+}
