@@ -11,8 +11,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out V59.1
+      - name: Check out external validation branch
         uses: actions/checkout@v4
+        with:
+          ref: external-validation-v59-1
+          fetch-depth: 1
+
+      - name: Verify checked-out branch and required files
+        run: |
+          echo "Current branch:"
+          git branch --show-current
+
+          echo
+          echo "Repository root:"
+          ls -la
+
+          echo
+          echo "Validation scripts:"
+          ls -la external_validation_workflow/scripts
+
+          test -f external_validation_net_co2_trajectory.csv
+          test -f external_validation_workflow/scripts/run_fair_2_2_4.py
+          test -f external_validation_workflow/scripts/compare_models.py
+
+          echo
+          echo "Required V59.1 validation files are present."
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
@@ -26,116 +49,216 @@ jobs:
 
       - name: Download official FaIR 2.2.4 source
         run: |
-          git clone --depth 1 --branch v2.2.4 https://github.com/OMS-NetZero/FAIR.git FAIR-v2.2.4
+          git clone \
+            --depth 1 \
+            --branch v2.2.4 \
+            https://github.com/OMS-NetZero/FAIR.git \
+            FAIR-v2.2.4
 
-      - name: Build the documented 2184-2400 validation extension
+      - name: Build documented 2184-2400 validation extension
         run: |
           python - <<'PY'
           import csv
           from pathlib import Path
 
           src = Path("external_validation_net_co2_trajectory.csv")
+
           dst = Path(
               "external_validation_workflow/validation_input/"
               "external_validation_net_co2_trajectory_extended_to_2400.csv"
           )
 
+          if not src.exists():
+              raise FileNotFoundError(
+                  f"Required trajectory file not found: {src}"
+              )
+
           with src.open(newline="", encoding="utf-8") as f:
               rows = list(csv.DictReader(f))
 
           if not rows:
-              raise RuntimeError("Canonical V59.1 trajectory is empty")
+              raise RuntimeError(
+                  "Canonical V59.1 trajectory is empty"
+              )
+
+          required_columns = {"year", "net_co2_gtco2"}
+
+          if not required_columns.issubset(rows[0].keys()):
+              raise RuntimeError(
+                  "Trajectory must contain year and net_co2_gtco2 columns"
+              )
 
           last = rows[-1]
+
           last_year = int(last["year"])
           last_net = float(last["net_co2_gtco2"])
 
           if last_year != 2183:
               raise RuntimeError(
-                  f"Expected canonical trajectory to end in 2183, got {last_year}"
+                  f"Expected canonical trajectory to end in 2183, "
+                  f"got {last_year}"
               )
 
           output = [
               {
-                  "year": int(r["year"]),
-                  "net_co2_gtco2": float(r["net_co2_gtco2"])
+                  "year": int(row["year"]),
+                  "net_co2_gtco2": float(row["net_co2_gtco2"])
               }
-              for r in rows
+              for row in rows
           ]
 
           for year in range(2184, 2401):
-              output.append({
-                  "year": year,
-                  "net_co2_gtco2": last_net
-              })
+              output.append(
+                  {
+                      "year": year,
+                      "net_co2_gtco2": last_net
+                  }
+              )
 
-          dst.parent.mkdir(parents=True, exist_ok=True)
+          dst.parent.mkdir(
+              parents=True,
+              exist_ok=True
+          )
 
-          with dst.open("w", newline="", encoding="utf-8") as f:
+          with dst.open(
+              "w",
+              newline="",
+              encoding="utf-8"
+          ) as f:
               writer = csv.DictWriter(
                   f,
-                  fieldnames=["year", "net_co2_gtco2"]
+                  fieldnames=[
+                      "year",
+                      "net_co2_gtco2"
+                  ]
               )
+
               writer.writeheader()
               writer.writerows(output)
 
           print("Created:", dst)
           print("Rows:", len(output))
+          print("Canonical final year:", last_year)
           print("2183 net CO2:", last_net)
-          print("2400 net CO2:", output[-1]["net_co2_gtco2"])
+          print(
+              "2400 net CO2:",
+              output[-1]["net_co2_gtco2"]
+          )
           PY
+
+      - name: Verify extended validation trajectory
+        run: |
+          test -f \
+            external_validation_workflow/validation_input/external_validation_net_co2_trajectory_extended_to_2400.csv
+
+          echo "Extended trajectory created successfully."
+
+          tail -5 \
+            external_validation_workflow/validation_input/external_validation_net_co2_trajectory_extended_to_2400.csv
 
       - name: Run official FaIR 2.2.4 benchmark
         run: |
-          python external_validation_workflow/scripts/run_fair_2_2_4.py \
+          python \
+            external_validation_workflow/scripts/run_fair_2_2_4.py \
             --fair-repo FAIR-v2.2.4 \
             --trajectory external_validation_workflow/validation_input/external_validation_net_co2_trajectory_extended_to_2400.csv \
             --outdir external_validation_results/fair_v59_1_reproduction
 
-      - name: Display and verify result
+      - name: Verify FaIR result files
         run: |
-          cat external_validation_results/fair_v59_1_reproduction/fair_v2_2_4_summary.json
+          test -f \
+            external_validation_results/fair_v59_1_reproduction/fair_v2_2_4_summary.json
+
+          test -f \
+            external_validation_results/fair_v59_1_reproduction/fair_v2_2_4_timeseries.csv
+
+          test -f \
+            external_validation_results/fair_v59_1_reproduction/fair_v2_2_4_crossings.csv
+
+          echo "FaIR result files exist."
+
+      - name: Display and validate FaIR summary
+        run: |
+          cat \
+            external_validation_results/fair_v59_1_reproduction/fair_v2_2_4_summary.json
 
           python - <<'PY'
           import json
           from pathlib import Path
 
-          p = Path(
-              "external_validation_results/fair_v59_1_reproduction/"
+          path = Path(
+              "external_validation_results/"
+              "fair_v59_1_reproduction/"
               "fair_v2_2_4_summary.json"
           )
 
-          result = json.loads(p.read_text())
+          result = json.loads(
+              path.read_text(
+                  encoding="utf-8"
+              )
+          )
 
           print()
-          print("FaIR version:", result["version"])
-          print("Configurations:", result["configs"])
-          print("Returning configurations:", result["returning_configs"])
-          print("Non-return fraction:", result["nonreturn_fraction"])
+          print(
+              "FaIR version:",
+              result.get("version")
+          )
 
-          if result["configs"] != 841:
+          print(
+              "Configurations:",
+              result.get("configs")
+          )
+
+          print(
+              "Returning configurations:",
+              result.get("returning_configs")
+          )
+
+          print(
+              "Non-return fraction:",
+              result.get("nonreturn_fraction")
+          )
+
+          if result.get("configs") != 841:
               raise RuntimeError(
-                  f"Expected 841 calibrated configurations, got {result['configs']}"
+                  "Expected 841 calibrated FaIR "
+                  f"configurations, got "
+                  f"{result.get('configs')}"
               )
           PY
 
       - name: Commit reproduction results to validation branch
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config \
+            user.name \
+            "github-actions[bot]"
 
-          git add external_validation_results/fair_v59_1_reproduction
-          git add external_validation_workflow/validation_input/external_validation_net_co2_trajectory_extended_to_2400.csv
+          git config \
+            user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            external_validation_results/fair_v59_1_reproduction
+
+          git add \
+            external_validation_workflow/validation_input/external_validation_net_co2_trajectory_extended_to_2400.csv
 
           if git diff --cached --quiet; then
-            echo "No result changes to commit."
+            echo "No validation result changes to commit."
           else
-            git commit -m "Reproduce FaIR 2.2.4 benchmark for V59.1"
-            git push origin HEAD:${{ github.ref_name }}
+            git commit \
+              -m "Reproduce FaIR 2.2.4 benchmark for V59.1"
+
+            git push \
+              origin \
+              HEAD:external-validation-v59-1
           fi
 
-      - name: Save downloadable validation artifact
+      - name: Save downloadable FaIR validation artifact
         uses: actions/upload-artifact@v4
         with:
           name: fair-v59-1-reproduction
-          path: external_validation_results/fair_v59_1_reproduction/
+          path: |
+            external_validation_results/fair_v59_1_reproduction/
+            external_validation_workflow/validation_input/external_validation_net_co2_trajectory_extended_to_2400.csv
+          if-no-files-found: error
